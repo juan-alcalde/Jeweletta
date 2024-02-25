@@ -1,7 +1,7 @@
 ![MasterHead](https://static.myfigurecollection.net/upload/pictures/2023/09/07/3745732.gif)
 # Jeweletta
 
-Jeweletta is a web application for selling art pieces created by my love Jeweletta. It provides a platform for Jeweletta to showcase her work and for users to browse and purchase art pieces online.
+Jeweletta is a web application for selling art pieces created by my client Jeweletta. It provides a platform for Jeweletta to showcase her work and for users to browse and purchase art pieces online.
 
 ## Table of Contents
 
