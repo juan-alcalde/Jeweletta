@@ -1,3 +1,4 @@
+using Jeweletta.Repositories;
 namespace Jeweletta
 {
     public class Program
@@ -9,7 +10,8 @@ namespace Jeweletta
             // Add services to the container.
 
             builder.Services.AddControllers();
-           
+            builder.Services.AddTransient<IUserRepository, UserRepository>();
+            
 
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
