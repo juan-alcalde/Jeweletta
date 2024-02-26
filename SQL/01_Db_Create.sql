@@ -1,80 +1,40 @@
-USE [master]
-
-IF db_id('Jewel') IS NULL
-  CREATE DATABASE [Jewel]
+USE [Jewel];
 GO
 
-USE [Jewel]
-GO
 
-DROP TABLE IF EXISTS [Painting];
-DROP TABLE IF EXISTS [PaintingCategory];
-DROP TABLE IF EXISTS [Category];
-DROP TABLE IF EXISTS [Order];
-DROP TABLE IF EXISTS [OrderDetails];
-DROP TABLE IF EXISTS [UserProfile];
-DROP TABLE IF EXISTS [UserType];
-GO
+SET IDENTITY_INSERT UserType ON;
+INSERT INTO UserType (Id, Name) VALUES (1, 'Admin'), (2, 'Buyer');
+SET IDENTITY_INSERT UserType OFF;
 
-CREATE TABLE [UserType] (
-  [Id] integer PRIMARY KEY IDENTITY,
-  [Name] nvarchar(20) NOT NULL
-)
 
-CREATE TABLE [UserProfile] (
-  [Id] integer PRIMARY KEY IDENTITY,
-  [UserName] nvarchar(50) NOT NULL,
-  [FullName] nvarchar(50) NOT NULL,
-  [Email] nvarchar(255) NOT NULL,
-  [ShippingAddress] nvarchar(255),
-  [UserTypeId] integer NOT NULL,
-  
-  CONSTRAINT [FK_UserProfile_UserType] FOREIGN KEY ([UserTypeId]) REFERENCES [UserType] ([Id])
-)
+SET IDENTITY_INSERT UserProfile ON;
+INSERT INTO UserProfile (Id, UserName, Email, FullName, ShippingAddress, UserTypeId) VALUES 
+(1, 'ArtLover123', 'boo@bar.com', 'Boo Alcalde', NULL, 2),
+(2, 'Owner777', 'email@example.com', 'Jeweletta Eddy', NULL, 1);
+SET IDENTITY_INSERT UserProfile OFF;
 
-CREATE TABLE [Category] (
-  [Id] integer PRIMARY KEY IDENTITY,
-  [Name] nvarchar(50) NOT NULL
-)
 
-CREATE TABLE [Painting] (
-  [Id] integer PRIMARY KEY IDENTITY,
-  [Title] nvarchar(255) NOT NULL,
-  [Description] text NOT NULL,
-  [Price] decimal NOT NULL,
-  [ImageLocation] nvarchar(255),
-  [Dimensions] nvarchar(255) NOT NULL,
-  [IsSold] bit NOT NULL,
-  [CategoryId] integer NOT NULL,
-  
-  CONSTRAINT [FK_Painting_Category] FOREIGN KEY ([CategoryId]) REFERENCES [Category] ([Id])
-)
+SET IDENTITY_INSERT Painting ON;
+INSERT INTO Painting (Id, Title, [Description], Price, ImageLocation, Dimensions, IsSold, CategoryId) VALUES 
+(1, 'Snail', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 50.00, 'http://lorempixel.com/920/360/', '8 inches � 10 inches', 0, 1);
+SET IDENTITY_INSERT Painting OFF;
 
-CREATE TABLE [PaintingCategory] (
-  [id] integer PRIMARY KEY IDENTITY,
-  [PaintingId] integer NOT NULL,
-  [CategoryId] integer NOT NULL,
 
-  CONSTRAINT [FK_PaintingCategory_Painting] FOREIGN KEY ([PaintingId]) REFERENCES [Painting] ([Id]),
-  CONSTRAINT [FK_PaintingCategory_Category] FOREIGN KEY ([CategoryId]) REFERENCES [Category] ([Id])
-)
+SET IDENTITY_INSERT Category ON;
+INSERT INTO Category (Id, [Name]) VALUES (1, 'Painting'), (2, 'Sculpture');
+SET IDENTITY_INSERT Category OFF;
 
-CREATE TABLE [Order] (
-  [Id] integer PRIMARY KEY IDENTITY,
-  [UserProfileId] integer NOT NULL,
-  [OrderDate] datetime NOT NULL,
-  [TotalAmount] decimal NOT NULL,
 
-  CONSTRAINT [FK_Order_UserProfile] FOREIGN KEY ([UserProfileId]) REFERENCES [UserProfile] ([Id])
-)
+SET IDENTITY_INSERT PaintingCategory ON;
+INSERT INTO PaintingCategory (Id, PaintingId, CategoryId) VALUES (1, 1, 1);
+SET IDENTITY_INSERT PaintingCategory OFF;
 
-CREATE TABLE [OrderDetails] (
-  [Id] integer PRIMARY KEY IDENTITY,
-  [OrderId] integer NOT NULL,
-  [PaintingId] integer NOT NULL,
-  [Quantity] integer NOT NULL,
 
-  CONSTRAINT [FK_OrderDetails_Order] FOREIGN KEY ([OrderId]) REFERENCES [Order] ([Id]),
-  CONSTRAINT [FK_OrderDetails_Painting] FOREIGN KEY ([PaintingId]) REFERENCES [Painting] ([Id])
-)
-GO
+SET IDENTITY_INSERT [Order] ON;
+INSERT INTO [Order] (Id, UserProfileId, OrderDate, TotalAmount) VALUES (1, 2, '2019-10-21', 50.00);
+SET IDENTITY_INSERT [Order] OFF;
+
+
+SET IDENTITY_INSERT OrderDetail ON;
+INSERT INTO OrderDetail (Id, OrderId, PaintingId, Quantity) VALUES (1, 1, 1, 1);
+SET IDENTITY_INSERT OrderDetail OFF;
