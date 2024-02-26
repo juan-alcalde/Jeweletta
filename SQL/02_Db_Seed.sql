@@ -1,4 +1,4 @@
-USE [Jeweletta];
+USE [Jewel];
 GO
 
 
@@ -15,13 +15,13 @@ SET IDENTITY_INSERT UserProfile OFF;
 
 
 SET IDENTITY_INSERT Painting ON;
-INSERT INTO Painting (Id, Title, Description, Price, ImageLocation, Medium, Dimensions, IsSold, CategoryId) VALUES 
-(1, 'Snail', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 50.00, 'http://lorempixel.com/920/360/', 'paint', '8 inches × 10 inches', 0, 1);
+INSERT INTO Painting (Id, Title, [Description], Price, ImageLocation, Dimensions, IsSold, CategoryId) VALUES 
+(1, 'Snail', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 50.00, 'http://lorempixel.com/920/360/', '8 inches ï¿½ 10 inches', 0, 1);
 SET IDENTITY_INSERT Painting OFF;
 
 
 SET IDENTITY_INSERT Category ON;
-INSERT INTO Category (Id, Name) VALUES (1, 'Painting'), (2, 'Sculpture');
+INSERT INTO Category (Id, [Name]) VALUES (1, 'Painting'), (2, 'Sculpture');
 SET IDENTITY_INSERT Category OFF;
 
 
@@ -30,10 +30,14 @@ INSERT INTO PaintingCategory (Id, PaintingId, CategoryId) VALUES (1, 1, 1);
 SET IDENTITY_INSERT PaintingCategory OFF;
 
 
-SET IDENTITY_INSERT Order ON;
+SET IDENTITY_INSERT [Order] ON;
 INSERT INTO [Order] (Id, UserProfileId, OrderDate, TotalAmount) VALUES (1, 2, '2019-10-21', 50.00);
-SET IDENTITY_INSERT Order OFF;
+SET IDENTITY_INSERT [Order] OFF;
 
+
+SET IDENTITY_INSERT OrderDetail ON;
+INSERT INTO OrderDetail (Id, OrderId, PaintingId, Quantity) VALUES (1, 1, 1, 1);
+SET IDENTITY_INSERT OrderDetail OFF;
 
 SET IDENTITY_INSERT OrderDetail ON;
 INSERT INTO OrderDetail (Id, OrderId, PaintingId, Quantity) VALUES (1, 1, 1, 1);
