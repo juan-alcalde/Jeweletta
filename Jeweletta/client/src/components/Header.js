@@ -34,7 +34,7 @@ export default function Header({isLoggedIn, setIsLoggedIn}) {
             }
              {isLoggedIn && JewelUserObject.id !== 2 &&
               <NavItem>
-                <NavLink tag={RRNavLink} to="/">custy</NavLink>
+                <NavLink tag={RRNavLink} to="/paintings">PAINT</NavLink>
               </NavItem>
             }
           </Nav>

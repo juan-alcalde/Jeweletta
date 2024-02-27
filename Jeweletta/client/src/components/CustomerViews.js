@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Hello from "./Hello";
+import { PaintingList } from "./Paintings/PaintingList";
+
 
 
 
@@ -9,6 +10,7 @@ export default function CustomerViews() {
       <Routes>
         
         <Route path="/" element={ <h1>hi customer</h1> } />
+        <Route path="/paintings" element= {<PaintingList />} />
          
     </Routes>
   );

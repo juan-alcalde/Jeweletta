@@ -8,7 +8,7 @@ export default function ApplicationViews() {
   const localTabloidUser = localStorage.getItem("userProfile");
   const JewelUserObject = JSON.parse(localTabloidUser)
  
-  if(JewelUserObject?.id == 2) {
+  if(JewelUserObject?.id === 2) {
 //employyee view
 return (<EmployeeViews/>)
   }

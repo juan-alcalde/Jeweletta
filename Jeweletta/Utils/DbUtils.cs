@@ -31,6 +31,10 @@ namespace Jeweletta.Utils
         {
             return reader.GetInt32(reader.GetOrdinal(column));
         }
+        public static decimal GetDecimal(SqlDataReader reader, string column)
+        {
+            return reader.GetDecimal(reader.GetOrdinal(column));
+        }
 
         /// <summary>
         ///  Get a DateTime from a data reader object.
@@ -77,7 +81,16 @@ namespace Jeweletta.Utils
 
             return reader.GetDateTime(ordinal);
         }
+        public static decimal? GetNullableDecimal(SqlDataReader reader, string column)
+        {
+            var ordinal = reader.GetOrdinal(column);
+            if (reader.IsDBNull(ordinal))
+            {
+                return null;
+            }
 
+            return reader.GetDecimal(ordinal);
+        }
         /// <summary>
         ///  Determine if the value a given column is NULL
         /// </summary>
