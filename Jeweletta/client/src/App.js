@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
-
+    
 
     useEffect(() => {
         if (!localStorage.getItem("userProfile")) {

@@ -15,38 +15,32 @@ import {
 export default function Header({isLoggedIn, setIsLoggedIn}) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  const localTabloidUser = localStorage.getItem("userProfile");
+  const JewelUserObject = JSON.parse(localTabloidUser);
+ 
 
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand tag={RRNavLink} to="/">Tabloid</NavbarBrand>
+        <NavbarBrand tag={RRNavLink} to="/">jewel</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             { /* When isLoggedIn === true, we will render the Home link */ }
-            {isLoggedIn && <>
+            {isLoggedIn &&
               <NavItem>
                 <NavLink tag={RRNavLink} to="/">Home</NavLink>
-                
               </NavItem>
-             
-              
-            
-              
-     
-            
-              </>
+            }
+             {isLoggedIn && JewelUserObject.id !== 2 &&
+              <NavItem>
+                <NavLink tag={RRNavLink} to="/">custy</NavLink>
+              </NavItem>
             }
           </Nav>
           <Nav navbar>
             {isLoggedIn &&
               <>
-                <NavItem>
-                  <NavLink tag={RRNavLink} to="/tag">Tag Management</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink tag={RRNavLink} to="/users">User Profiles</NavLink>
-                </NavItem>
                 <NavItem>
                   <a aria-current="page" className="nav-link"
                     style={{ cursor: "pointer" }} onClick={() => {

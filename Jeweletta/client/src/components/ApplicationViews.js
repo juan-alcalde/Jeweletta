@@ -1,15 +1,19 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Hello from "./Hello";
+import EmployeeViews from "./EmployeeViews";
+import CustomerViews from "./CustomerViews";
 
 
 
 export default function ApplicationViews() {
-  return (
-      <Routes>
-        
-        <Route path="/" element={<Hello />} />
-         
-    </Routes>
-  );
+  const localTabloidUser = localStorage.getItem("userProfile");
+  const JewelUserObject = JSON.parse(localTabloidUser)
+ 
+  if(JewelUserObject?.id == 2) {
+//employyee view
+return (<EmployeeViews/>)
+  }
+  else {
+//custoview
+return <CustomerViews/>
+  }
 }
