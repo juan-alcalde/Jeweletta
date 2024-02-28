@@ -1,7 +1,7 @@
 ![MasterHead](https://static.myfigurecollection.net/upload/pictures/2023/09/07/3745732.gif)
 # Jeweletta
 
-Jeweletta is a web application for selling art pieces built with React.js. This is for my client Jeweletta, an artist looking for a way to get her artwork out to the public. This app provides a platform for Jeweletta to showcase her work and for users to browse and purchase art pieces online.
+Jeweletta is a web application built with React.js for selling original art pieces.  This is for my client Jeweletta, an artist looking for a way to get her artwork out to the world. This app provides a platform for Jeweletta to showcase her work and for users to browse and purchase art pieces online.
 
 ## Table of Contents
 
