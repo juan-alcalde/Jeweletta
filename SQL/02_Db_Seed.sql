@@ -39,6 +39,3 @@ SET IDENTITY_INSERT OrderDetail ON;
 INSERT INTO OrderDetail (Id, OrderId, PaintingId, Quantity) VALUES (1, 1, 1, 1);
 SET IDENTITY_INSERT OrderDetail OFF;
 
-SET IDENTITY_INSERT OrderDetail ON;
-INSERT INTO OrderDetail (Id, OrderId, PaintingId, Quantity) VALUES (1, 1, 1, 1);
-SET IDENTITY_INSERT OrderDetail OFF;
