@@ -1,5 +1,6 @@
 // Painting.js
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, CardBody, CardImg } from "reactstrap";
 
 export const Painting = ({ painting }) => {
@@ -13,6 +14,10 @@ export const Painting = ({ painting }) => {
         <p>
           <strong>{painting?.price}</strong>
         </p>
+        <br></br>
+        <Link to={`/paintings/${painting.id}`}>
+    <strong>details</strong>
+</Link>
       </CardBody>
     </Card>
   );
