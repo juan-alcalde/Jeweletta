@@ -28,13 +28,13 @@ namespace Jeweletta.Repositories
                     {
                         paintings.Add(new Painting()
                         {
-                            Id = DbUtils.GetInt(reader, "PaintingId"), // Use alias PaintingId
+                            Id = DbUtils.GetInt(reader, "PaintingId"),
                             Title = DbUtils.GetString(reader, "Title"),
                             Description = DbUtils.GetString(reader, "Description"),
-                            Price = DbUtils.GetDecimal(reader, "Price"), // Assuming Price is decimal
-                            ImageLocation = DbUtils.GetString(reader, "ImageLocation"), // Use alias ImageLocation
+                            Price = DbUtils.GetDecimal(reader, "Price"), 
+                            ImageLocation = DbUtils.GetString(reader, "ImageLocation"), 
                             Dimension = DbUtils.GetString(reader, "Dimensions"),
-                            IsSold = reader.GetBoolean(reader.GetOrdinal("IsSold")), // Assuming IsSold is boolean
+                            IsSold = DbUtils.GetBoolean(reader,"IsSold"), 
                             CategoryId = DbUtils.GetInt(reader, "CategoryId"),
                             Category = new Category()
                             {

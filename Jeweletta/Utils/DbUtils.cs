@@ -3,6 +3,21 @@ namespace Jeweletta.Utils
 {
     public class DbUtils
     {
+
+        public static bool GetBoolean(SqlDataReader reader, string column)
+        {
+            return reader.GetBoolean(reader.GetOrdinal(column));
+        }
+        public static bool? GetNullableBoolean(SqlDataReader reader, string column)
+        {
+            var ordinal = reader.GetOrdinal(column);
+            if (reader.IsDBNull(ordinal))
+            {
+                return null;
+            }
+
+            return reader.GetBoolean(ordinal);
+        }
         /// <summary>
         ///  Get a string from a data reader object and gracefully handle NULL values
         /// </summary>
