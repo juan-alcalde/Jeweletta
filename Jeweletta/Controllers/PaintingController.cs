@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Jeweletta.Models;
 using Jeweletta.Repositories;
+using Microsoft.Extensions.Hosting;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,29 +26,17 @@ namespace Jeweletta.Controllers
             return Ok(_paintingRepository.GetAllPaintings());
         }
 
-        /* // GET api/<PaintingController>/5
-         [HttpGet("{id}")]
-         public string Get(int id)
-         {
-             return "value";
-         }
+        [HttpGet("{id}")]
+        public IActionResult GetPaintingById(int id)
+        {
+            Painting painting = _paintingRepository.GetPaintingById(id);
+            if (painting == null)
+            {
+                return NotFound();
+            }
+            return Ok(painting);
+        }
 
-         // POST api/<PaintingController>
-         [HttpPost]
-         public void Post([FromBody] string value)
-         {
-         }
 
-         // PUT api/<PaintingController>/5
-         [HttpPut("{id}")]
-         public void Put(int id, [FromBody] string value)
-         {
-         }
-
-         // DELETE api/<PaintingController>/5
-         [HttpDelete("{id}")]
-         public void Delete(int id)
-         {
-         }*/
     }
 }
