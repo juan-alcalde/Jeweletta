@@ -17,7 +17,7 @@ Jeweletta is a web application for selling art pieces created by my client Jewel
 
 ## About
 
-Jeweletta is designed to provide a seamless experience for both Jewel and art enthusiasts. She can upload her artwork, and manage her inventory. Users can explore a diverse range of artwork, add items to their shopping cart, and complete purchases securely.
+Jeweletta is designed to provide a seamless experience for both Jewel and art enthusiasts. She can upload her artwork, and manage her inventory. Users can explore a diverse range of Jeweletta's artwork, add items to their shopping cart, and complete purchases securely.
 
 ## Features
 
