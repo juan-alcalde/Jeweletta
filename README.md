@@ -49,7 +49,7 @@ Jeweletta is designed to provide a seamless experience for both Jewel and art en
 
 ## Usage
 
-Once the application is set up, users can access it via their web browser. Artists can create accounts, upload artwork, and manage their profiles. Users can browse artwork, add items to their cart, and complete purchases. Admins can manage users, artwork, and site settings from the admin dashboard.
+Once the application is set up, users can access it via their web browser. Jeweletta can upload artwork and  Users can browse her artwork, add items to their cart, and complete purchases. Admins can manage users, artwork, and site settings from the admin dashboard.
 
 ## Contributing
 
