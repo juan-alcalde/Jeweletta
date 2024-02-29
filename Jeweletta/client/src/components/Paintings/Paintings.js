@@ -15,7 +15,7 @@ export const Painting = ({ painting }) => {
           <strong>{painting?.price}</strong>
         </p>
         <br></br>
-        <Link to={`/paintings/${painting.id}`}>
+        <Link to={`/paintings/${painting?.id}`}>
     <strong>details</strong>
 </Link>
       </CardBody>
