@@ -1,6 +1,12 @@
 .sticky-navbar {
+  
+  
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: #ffffff;
+  }
+  .mr-auto {
+    display: flex;
+    justify-content: space-around;
   }

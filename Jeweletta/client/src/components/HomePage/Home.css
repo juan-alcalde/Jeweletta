@@ -1,0 +1,19 @@
+.home-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Images/IMG_4284_Facetune_20-04-2022-17-14-52.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7); /* Adjust brightness as needed */
+    z-index: -1;
+  }
