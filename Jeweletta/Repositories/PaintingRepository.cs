@@ -1,5 +1,6 @@
 ﻿using Jeweletta.Models;
 using Jeweletta.Utils;
+using Microsoft.Extensions.Hosting;
 
 
 namespace Jeweletta.Repositories
@@ -8,6 +9,35 @@ namespace Jeweletta.Repositories
     {
         public PaintingRepository(IConfiguration configuration) : base(configuration) { }
 
+        public void Add(Painting painting)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+            INSERT INTO Painting (Title, [Description], Price, ImageLocation, Dimensions, IsSold, CategoryId)
+                OUTPUT INSERTED.ID
+                VALUES(@title, @description, @price, @imageLocation, @dimensions, @isSold,
+                 @categoryId)";
+
+                    DbUtils.AddParameter(cmd, "@title", painting.Title);
+                    DbUtils.AddParameter(cmd, "@description", painting.Description);
+                    DbUtils.AddParameter(cmd, "@price", painting.Price);
+                    DbUtils.AddParameter(cmd, "@imageLocation", painting.ImageLocation);
+                    DbUtils.AddParameter(cmd, "@dimensions", painting.Dimensions);
+                    DbUtils.AddParameter(cmd, "@isSold", painting.IsSold);
+                    DbUtils.AddParameter(cmd, "@categoryId", painting.CategoryId);
+                   
+
+                    painting.Id = (int)cmd.ExecuteScalar();
+
+
+                }
+
+            }
+        }
         public Painting GetPaintingById(int id)
         {
             using (var conn = Connection)
@@ -35,7 +65,7 @@ namespace Jeweletta.Repositories
                             Description = DbUtils.GetString(reader, "Description"),
                             Price = DbUtils.GetDecimal(reader, "Price"),
                             ImageLocation = DbUtils.GetString(reader, "ImageLocation"),
-                            Dimension = DbUtils.GetString(reader, "Dimensions"),
+                            Dimensions = DbUtils.GetString(reader, "Dimensions"),
                             IsSold = DbUtils.GetBoolean(reader, "IsSold"),
                             CategoryId = DbUtils.GetInt(reader, "CategoryId"),
                             Category = new Category()
@@ -76,7 +106,7 @@ namespace Jeweletta.Repositories
                             Description = DbUtils.GetString(reader, "Description"),
                             Price = DbUtils.GetDecimal(reader, "Price"), 
                             ImageLocation = DbUtils.GetString(reader, "ImageLocation"), 
-                            Dimension = DbUtils.GetString(reader, "Dimensions"),
+                            Dimensions = DbUtils.GetString(reader, "Dimensions"),
                             IsSold = DbUtils.GetBoolean(reader,"IsSold"), 
                             CategoryId = DbUtils.GetInt(reader, "CategoryId"),
                             Category = new Category()
