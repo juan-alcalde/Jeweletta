@@ -37,6 +37,13 @@ namespace Jeweletta.Controllers
             return Ok(painting);
         }
 
+        [HttpPost]
+        public IActionResult Post(Painting painting)
+        {
+           
+            _paintingRepository.Add(painting);
+            return CreatedAtAction("Get", new { id = painting.Id }, painting);
+        }
 
     }
 }

@@ -21,7 +21,7 @@ namespace Jeweletta.Models
         [DisplayName("Image URL")] 
         public string? ImageLocation { get; set; }
 
-        public string? Dimension { get; set; }
+        public string? Dimensions { get; set; }
 
         public bool IsSold { get; set; }
 

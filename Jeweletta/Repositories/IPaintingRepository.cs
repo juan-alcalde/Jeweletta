@@ -6,5 +6,6 @@ namespace Jeweletta.Repositories
     {
         List<Painting> GetAllPaintings();
         Painting GetPaintingById(int id);
+        void Add(Painting painting);
     }
 }
