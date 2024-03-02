@@ -45,5 +45,35 @@ namespace Jeweletta.Controllers
             return CreatedAtAction("Get", new { id = painting.Id }, painting);
         }
 
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Painting painting)
+        {
+            if (id != painting.Id)
+            {
+                return BadRequest();
+            }
+           
+            _paintingRepository.Update(painting);
+            return NoContent();
+        }
+
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _paintingRepository.Delete(id);
+                return NoContent();
+            }
+            catch (SqlException ex)
+            {
+             
+                Console.WriteLine("SQL Exception occurred: " + ex.Message);
+                return StatusCode(500, "An error occurred while deleting the post.");
+            }
+        }
+
     }
 }
