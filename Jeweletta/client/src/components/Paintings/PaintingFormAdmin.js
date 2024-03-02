@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getAllCategories } from "../../Managers/CategoryManager";
 import { addPainting } from "../../Managers/PaintingManager";
 import { useNavigate } from "react-router-dom";
+import "./paintingForm.css"
 
 export const PaintingForm = () => {
     const [categories, setCategories] = useState([]);
@@ -53,8 +54,9 @@ export const PaintingForm = () => {
 
     return (
         <div>
-            <form className="PostForm">
-                <h2 className="postForm__title">New Painting</h2>
+            <form class="cool-form">
+                <h2 className="postForm__title">Add A New Painting</h2>
+                <hr></hr>
                 <fieldset>
                     <div className="form-group">
                         <label htmlFor="Title">Title:</label>
@@ -161,7 +163,7 @@ export const PaintingForm = () => {
                     </div>
                 </fieldset>
                 <button
-                    className="btn btn-primary"
+                    className="submit-btn"
                     onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 >
                     Submit Post

@@ -1,0 +1,89 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    margin: 100px; /* Space between cards */
+    justify-content: center ; 
+  }
+  
+  .card-container .card {
+    width: 250px; /* Adjust the width of the card */
+  }
+  .page-header {
+    background-color: #010101;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    color: #9a899e;
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    color: #ffffff;
+    font-size: 1rem;
+    
+  }
+  /* adminPainting.css */
+
+/* Style for the painting list table */
+.merchandise-management-page table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Style for table headers */
+.merchandise-management-page th {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Style for table cells */
+.merchandise-management-page td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+}
+
+/* Style for alternate row background colors */
+.merchandise-management-page tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Style for row hover effect */
+.merchandise-management-page tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Style for images within table cells */
+.merchandise-management-page td img {
+  max-width: 100px;
+  max-height: 100px;
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Additional styles for specific columns if needed */
+
+.outlined-btn {
+  background-color: transparent;
+  border: 2px solid #7190d8;
+  color: #5f79bc;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.outlined-btn:hover {
+  background-color: #8292d7;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

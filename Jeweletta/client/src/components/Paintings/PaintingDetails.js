@@ -19,7 +19,7 @@ export const PaintingDetails = () => {
       return (<>
       <h1>DETAILS </h1>
         <Card className="m-4">
-            <CardImg top src={painting?.imageLocation} alt={painting?.title} />
+            <CardImg top src={painting?.imageLocation} alt={painting?.title}  style={{ maxWidth: "500px", maxHeight: "" }}/>
       <CardBody>
         <p>
           <strong>{painting?.title}</strong>

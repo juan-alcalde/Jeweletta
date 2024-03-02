@@ -6,7 +6,7 @@ import { Card, CardBody, CardImg } from "reactstrap";
 export const Painting = ({ painting }) => {
   return (
     <Card className="m-4">
-      <CardImg top src={painting?.imageLocation} alt={painting?.title} />
+      <CardImg top src={painting?.imageLocation} alt={painting?.title}  style={{ maxWidth: "250px", maxHeight: "" }}/>
       <CardBody>
         <p>
           <strong>{painting?.title}</strong>

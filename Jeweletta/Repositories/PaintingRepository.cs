@@ -9,6 +9,20 @@ namespace Jeweletta.Repositories
     {
         public PaintingRepository(IConfiguration configuration) : base(configuration) { }
 
+
+        public void Delete(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM Painting WHERE Id = @Id";
+                    DbUtils.AddParameter(cmd, "@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
         public void Add(Painting painting)
         {
             using (var conn = Connection)
@@ -36,6 +50,39 @@ namespace Jeweletta.Repositories
 
                 }
 
+            }
+        }
+        public void Update(Painting painting)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                        UPDATE Painting
+                           SET Title = @Title,
+                               Description = @Description,
+                               Price = @Price,
+                               ImageLocation = @ImageLocation,
+                               Dimensions = @Dimensions,
+                               IsSold = @IsSold,
+                               CategoryId = @CategoryId
+                           
+
+                         WHERE Id = @Id";
+
+                    DbUtils.AddParameter(cmd, "@Title", painting.Title);
+                    DbUtils.AddParameter(cmd, "@Description", painting.Description);
+                    DbUtils.AddParameter(cmd, "@Price", painting.Price);
+                    DbUtils.AddParameter(cmd, "@ImageLocation", painting.ImageLocation);
+                    DbUtils.AddParameter(cmd, "@Dimensions", painting.Dimensions);
+                    DbUtils.AddParameter(cmd, "@IsSold", painting.IsSold);
+                    DbUtils.AddParameter(cmd, "@CategoryId", painting.CategoryId);
+                    DbUtils.AddParameter(cmd, "@Id", painting.Id);
+
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
         public Painting GetPaintingById(int id)
