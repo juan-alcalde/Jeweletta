@@ -1,0 +1,68 @@
+.header {
+    background-color: #f8f9fa; /* Choose your preferred background color */
+    padding: 20px 0; /* Adjust padding as needed */
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px; /* Adjust the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.page-header h1 {
+    font-size: 36px; /* Adjust the font size */
+    color: #ffffff; /* Choose your preferred text color */
+}
+
+.page-header p {
+    font-size: 18px; /* Adjust the font size */
+    color: #666; /* Choose your preferred text color */
+}
+.card-body {
+    padding: 20px; /* Add padding for better spacing */
+  }
+  
+  .card-title {
+    display: flex;
+    justify-content: center;
+    font-size: 25px; /* Increase font size for the title */
+    margin-bottom: 10px; /* Add some margin below the title */
+  }
+  
+  .card-price {
+    display: flex;
+    justify-content: center;
+    font-size: 40px; /* Adjust font size for the price */
+    color: #007bff; /* Choose a color for the price text */
+    margin-bottom: 15px; /* Add margin below the price */
+  }
+  
+  .card-link {
+    display: inline-block;
+    color: #007bff; /* Match the link color with the price */
+    text-decoration: none;
+    transition: color 0.3s; /* Add smooth transition effect */
+  }
+  
+  .card-link:hover {
+    color: #0056b3; /* Change link color on hover */
+  }
+  .painting-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .painting-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.imgur.com/9EwepoG.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7); /* Adjust brightness as needed */
+    z-index: -1;
+  }
