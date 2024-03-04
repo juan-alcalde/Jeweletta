@@ -13,7 +13,7 @@
   .login-container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     overflow: hidden;
     
   }
@@ -31,12 +31,7 @@
   margin: 0 auto; /* Center the form horizontally */
   
   }
-.login--Form{
-    display: inline-block;
-    margin: 0 auto;
-    text-align: left;
-    
-  }
+
 .login--Form > fieldset > input[type="email"] {
     width: 25em;
   }

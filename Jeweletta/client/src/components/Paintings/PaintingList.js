@@ -30,17 +30,18 @@ export const PaintingList = () => {
       <div className="row">
         {paintings.map((painting) => (
           <div key={painting.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <Card  className="painting-card" style={{ width: "250px" }}>
+            <Card  className="painting-card" >
               <CardImg
                 top
                 src={painting.imageLocation}
                 alt={painting.title}
-                style={{ maxWidth: "250px", maxHeight: "" }}
+               
               />
               <CardBody className="card-body">
                 <p className="card-title">
                   <strong>{painting.title}</strong>
                 </p>
+                
                 <hr></hr>
                 <p className="card-price">
                   <strong>${painting.price}.00</strong>

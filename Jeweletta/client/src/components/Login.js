@@ -34,11 +34,11 @@ export default function Login({ setIsLoggedIn }) {
         <hr></hr>
         <fieldset>
           <FormGroup>
-           <strong> <Label for="email"style={{ fontSize: "20px"}}>Email</Label></strong>
+           <strong> <Label for="email"style={{ fontSize: "15px"}}>Email</Label></strong>
             <Input id="email" type="text" onChange={e => setEmail(e.target.value)} />
           </FormGroup>
           <FormGroup>
-            <strong><Label for="password"style={{ fontSize: "20px"}}>Password</Label></strong>
+            <strong><Label for="password"style={{ fontSize: "15px"}}>Password</Label></strong>
             <Input id="password" type="password" onChange={e => setPassword(e.target.value)} />
           </FormGroup>
           <FormGroup>
