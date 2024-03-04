@@ -35,6 +35,13 @@ export default function Header({isLoggedIn, setIsLoggedIn}) {
           </NavItem>
       </>
         }
+         {!isLoggedIn &&
+      <>
+          <NavItem>
+            <NavbarBrand tag={RRNavLink} to="/"style={{ fontSize: "30px", color: "white", fontFamily: "Dancing Script" }}> JEWELETTA </NavbarBrand>
+          </NavItem>
+      </>
+        }
          {isLoggedIn && JewelUserObject?.id == 2 &&
          <>
           <NavItem>
@@ -66,15 +73,13 @@ export default function Header({isLoggedIn, setIsLoggedIn}) {
         
         {!isLoggedIn &&
           <>
-           <NavItem>
-            <NavbarBrand tag={RRNavLink} to="/"style={{ fontSize: "30px", color: "white", fontFamily: "Dancing Script" }}> JEWELETTA </NavbarBrand>
-          </NavItem>
-            {/* <NavItem>
+           
+            <NavItem>
               <NavLink tag={RRNavLink} to="/login" style={{ fontSize: "20px", color: "white" }}>Login</NavLink> 
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/register" style={{ fontSize: "20px", color: "white" }}>Register</NavLink> 
-            </NavItem> */}
+            </NavItem>
           </>
         }
       </Nav>

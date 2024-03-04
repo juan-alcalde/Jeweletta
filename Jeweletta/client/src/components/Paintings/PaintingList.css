@@ -19,7 +19,7 @@
     color: #666; /* Choose your preferred text color */
 }
 .card-body {
-    padding: 20px; /* Add padding for better spacing */
+    padding: 10px; /* Add padding for better spacing */
   }
   
   .card-title {
@@ -67,3 +67,5 @@
     filter: brightness(0.7); /* Adjust brightness as needed */
     z-index: -1;
   }
+  
+    

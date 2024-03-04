@@ -4,7 +4,7 @@ import { getAllPaintings } from "../../Managers/PaintingManager";
 import { Painting } from "./Paintings";
 import "./PaintingList.css"
 import { Link } from "react-router-dom";
-import { Card, CardBody, CardImg } from "reactstrap";
+import { Card, CardBody, CardImg, Badge, CardFooter, CardHeader } from "reactstrap";
 
 export const PaintingList = () => {
   const [paintings, setPaintings] = useState([]);
@@ -37,19 +37,26 @@ export const PaintingList = () => {
                 alt={painting.title}
                
               />
-              <CardBody className="card-body">
-                <p className="card-title">
+              <CardHeader>
+              <p className="card-title">
                   <strong>{painting.title}</strong>
                 </p>
-                
-                <hr></hr>
+              </CardHeader>
+              <CardBody className="card-body">
+              <p className="card-title">
+              <Badge pill color='info' >
+			           <span className='align-middle'>{painting.category.name}</span>
+		          </Badge>
+              </p>
                 <p className="card-price">
                   <strong>${painting.price}.00</strong>
                 </p>
+              </CardBody>
+              <CardFooter>
                 <Link className="card-link" to={`/paintings/${painting.id}`}>
                   <strong>More Details</strong>
                 </Link>
-              </CardBody>
+                </CardFooter>
             </Card>
           </div>
         ))}

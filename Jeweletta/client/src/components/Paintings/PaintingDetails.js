@@ -28,15 +28,22 @@ export const PaintingDetails = () => {
             className="outlined-btn">
                 Go Back
             </button>
+       
       <div className="container mt-5">
       <div className="row">
+      
         <div className="col-md-6">
+          
         <img src={painting.imageLocation} alt={painting.title} className="img-fluid" style={{  position: "sticky", top: "10%"}} />
         </div>
+        <br></br>
+            <br></br> <br></br>
+            <br></br> <br></br>
+            <br></br>
         <div className="col-md-6">
           <h2>{painting.title} : Fantasy Wall art,
            Room Decor for Home Office,
-            Bedroom Living Room, Bathroom Wall Decor  (Original Painting)</h2>
+            Bedroom Living Room, Wall Decor  (Original Painting)</h2>
           <hr></hr>
           <br></br>
           <p className="detail-price">${painting.price}.00 USD</p>
