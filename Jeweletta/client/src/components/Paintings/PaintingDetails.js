@@ -20,6 +20,7 @@ export const PaintingDetails = () => {
         return null;
       }
       return (<>
+      <div className="bg-black text-light py-4">
       <button
             onClick={() => navigate("/paintings")}
            
@@ -60,5 +61,6 @@ Your Happiness, Our Promise: We're Committed to Your Contentment. Should there b
         </div>
         </div>
         </div> 
+        </div>
         </> );
 };
