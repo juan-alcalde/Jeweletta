@@ -50,12 +50,18 @@ export default function Header({isLoggedIn, setIsLoggedIn}) {
          <NavItem>
           <NavLink tag={RRNavLink} to="/categories" style={{ fontSize: "20px", color: "white" }}>Category Managment</NavLink> {/* Adjust the font size */}
         </NavItem>
+        <NavItem>
+            <NavLink tag={RRNavLink} to="/orders" style={{ fontSize: "20px", color: "white" }}>Order Managment</NavLink> {/* Adjust the font size */}
+          </NavItem>
         </>
         }
         {isLoggedIn && JewelUserObject?.id !== 2 &&
+          <>
           <NavItem>
             <NavLink tag={RRNavLink} to="/paintings" style={{ fontSize: "20px", color: "white" }}>Gallery</NavLink> {/* Adjust the font size */}
           </NavItem>
+          
+          </>
         }
       </Nav>
       <Nav navbar>
