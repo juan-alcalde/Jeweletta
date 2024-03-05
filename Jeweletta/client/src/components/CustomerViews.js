@@ -7,6 +7,8 @@ import Home from "./HomePage/Home";
 
 
 
+
+
 export default function CustomerViews() {
   return (
       <Routes>
@@ -14,6 +16,7 @@ export default function CustomerViews() {
         <Route path="/" element={ <Home/> } />
         <Route path="/paintings" element= {<PaintingList />} />
         <Route path="/paintings/:id" element= {<PaintingDetails/>} />
+    
          
     </Routes>
   );

@@ -13,7 +13,7 @@ namespace Jeweletta
             builder.Services.AddTransient<IUserRepository, UserRepository>();
             builder.Services.AddTransient<IPaintingRepository, PaintingRepository>();
             builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
-
+            builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

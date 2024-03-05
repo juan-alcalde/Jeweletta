@@ -27,6 +27,11 @@ export const PaintingList = () => {
            
 <div className="bg-black text-light py-4">
 <div className="container">
+  <br></br>
+  <br></br>
+  <br></br>
+ 
+  
       <div className="row">
         {paintings.map((painting) => (
           <div key={painting.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
