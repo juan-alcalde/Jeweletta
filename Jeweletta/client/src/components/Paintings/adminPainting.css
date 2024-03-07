@@ -25,15 +25,15 @@
     font-size: 1rem;
     
   }
-  /* adminPainting.css */
 
-/* Style for the painting list table */
+
+
 .merchandise-management-page table {
   width: 100%;
   border-collapse: collapse;
 }
 
-/* Style for table headers */
+
 .merchandise-management-page th {
   background-color: #f2f2f2;
   border-bottom: 1px solid #ddd;
@@ -42,31 +42,31 @@
   font-weight: bold;
 }
 
-/* Style for table cells */
+
 .merchandise-management-page td {
   border-bottom: 1px solid #ddd;
   padding: 12px;
 }
 
-/* Style for alternate row background colors */
+
 .merchandise-management-page tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-/* Style for row hover effect */
+
 .merchandise-management-page tr:hover {
   background-color: #f0f0f0;
 }
 
-/* Style for images within table cells */
+
 .merchandise-management-page td img {
   max-width: 100px;
   max-height: 100px;
   display: block;
-  margin: 0 auto; /* Center the image horizontally */
+  margin: 0 auto;
 }
 
-/* Additional styles for specific columns if needed */
+
 
 .outlined-btn {
   background-color: transparent;
