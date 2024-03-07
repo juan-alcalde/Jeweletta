@@ -32,14 +32,14 @@ export const UserOrders = () => {
   }, [JewelUserObject.id]);
 
     return (<>
-     <div className="bg-dark ">
+     <div className="bg-black  ">
   <div className="container ">
     <div className="row">
       <div className="col-md-7" >
           <div className="m-7">
             <Card className="m-4">
-              <CardHeader>
-                <h1>My Shopping Cart</h1>
+              <CardHeader className="bg-secondary ">
+                <h1 style={{ color: "white" }}>My Shopping Cart</h1>
               </CardHeader>
 
               {userOrders.map((order) => { return <CustomerOrder key={order.id} order={order} />; })}   
@@ -55,8 +55,8 @@ export const UserOrders = () => {
             <div className="col-md-5">
             <div className="container cart">
                 <Card className="m-4">
-                  <CardHeader>
-                     <h1> My Subtotal </h1>
+                  <CardHeader className="bg-secondary ">
+                     <h1 style={{ color: "white" }}> My Subtotal </h1>
                   </CardHeader>
                       <CardBody>
                       <p>
