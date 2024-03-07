@@ -7,5 +7,6 @@ namespace Jeweletta.Repositories
         List<Order> GetAllOrders();
         List<Order> GetOrderByUserId(int userProfileId);
         void Add(Order order);
+        void Delete(int id);
     }
 }

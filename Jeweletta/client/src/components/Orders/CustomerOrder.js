@@ -1,9 +1,25 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { Card, CardBody,Badge, CardHeader, CardImg,Button } from "reactstrap";
-
+import { DeleteOrderById, getAllOrders } from "../../Managers/OrderManager";
+import { useNavigate } from "react-router-dom";
 
 export const CustomerOrder = ({ order}) => {
+  const [orders, setOrders] = useState([]);
+  const navigate = useNavigate();
+  const getOrders = () => {
+    getAllOrders().then((allOrders) => setOrders(allOrders));
+  };
+  const deleteOrderById = (id) => {
+    const confirmDelete = window.confirm("Do you really want to delete this category? This is your last chance to back out.");
+    if (confirmDelete) {
+      DeleteOrderById(id).then(() => {getOrders();window.location.reload();})
+    }
+  }
 
+  useEffect(() => {
+    getOrders();
+  }, []);
     return (
         <>
         
@@ -21,8 +37,12 @@ export const CustomerOrder = ({ order}) => {
                 <h6><strong>{order.painting.title} (Original Painting)</strong></h6>
                 <label>Price: ${order.painting.price}.00</label>
                 <Badge>Quantity:  1</Badge> 
+               <br>
+               </br>
+               <br></br>
+                <Button color= "danger"  onClick={() => deleteOrderById(order.id)}>Delete Item</Button>
               </div>
-
+              <br></br>
         </div>
         </div>
         

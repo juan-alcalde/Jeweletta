@@ -44,6 +44,12 @@ namespace Jeweletta.Controllers
             return CreatedAtAction("Get", new { id = order.Id }, order);
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _orderRepository.Delete(id);
+            return NoContent();
+        }
         /*[HttpGet("{UserProfileId}")]
               public IActionResult Get(int UserProfileId)
               {

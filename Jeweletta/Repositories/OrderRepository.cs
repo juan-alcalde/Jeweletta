@@ -99,6 +99,19 @@ LEFT JOIN Painting p ON o.paintingId = p.id
             }
         }
 
+        public void Delete(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM [Order] WHERE Id = @Id";
+                    DbUtils.AddParameter(cmd, "@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
         public List<Order> GetOrderByUserId(int userProfileId)
         {
