@@ -1,6 +1,8 @@
 ﻿using Jeweletta.Models;
 using Jeweletta.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+using System.Security.Claims;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,6 +23,27 @@ namespace Jeweletta.Controllers
         {
             return Ok(_orderRepository.GetAllOrders());
         }
+
+        [HttpGet("GetUserOrders/{id}")]
+        public IActionResult Get(int id)
+        {
+            List<Order> orders = _orderRepository.GetOrderByUserId(id);
+            if (orders == null)
+
+            {
+                return NotFound();
+            }
+
+            return Ok(orders);
+        }
+
+        [HttpPost]
+        public IActionResult Post(Order order)
+        {
+            _orderRepository.Add(order);
+            return CreatedAtAction("Get", new { id = order.Id }, order);
+        }
+
         /*[HttpGet("{UserProfileId}")]
               public IActionResult Get(int UserProfileId)
               {
@@ -53,5 +76,7 @@ namespace Jeweletta.Controllers
           public void Delete(int id)
           {
           }*/
+
+
     }
 }

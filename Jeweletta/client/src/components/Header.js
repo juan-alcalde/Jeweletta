@@ -60,7 +60,9 @@ export default function Header({isLoggedIn, setIsLoggedIn}) {
           <NavItem>
             <NavLink tag={RRNavLink} to="/paintings" style={{ fontSize: "20px", color: "white" }}>Gallery</NavLink> {/* Adjust the font size */}
           </NavItem>
-          
+          <NavItem>
+             <NavLink tag={RRNavLink} to="/my-orders" style={{ fontSize: "20px", color: "white" }}>MyCart</NavLink>
+              </NavItem>
           </>
         }
       </Nav>

@@ -1,52 +1,52 @@
 .header {
-    background-color: #f8f9fa; /* Choose your preferred background color */
-    padding: 20px 0; /* Adjust padding as needed */
+    background-color: #f8f9fa; 
+    padding: 20px 0; 
     text-align: center;
 }
 
 .container {
-    max-width: 1100px; /* Adjust the maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
+    max-width: 1100px; 
+    margin: 0 auto;
 }
 
 .page-header h1 {
-    font-size: 36px; /* Adjust the font size */
-    color: #ffffff; /* Choose your preferred text color */
+    font-size: 36px; 
+    color: #ffffff;
 }
 
 .page-header p {
-    font-size: 18px; /* Adjust the font size */
-    color: #666; /* Choose your preferred text color */
+    font-size: 18px; 
+    color: #666;
 }
 .card-body {
-    padding: 10px; /* Add padding for better spacing */
+    padding: 10px; 
   }
   
   .card-title {
     display: flex;
     justify-content: center;
-    font-size: 20px; /* Increase font size for the title */
-    margin-bottom: 10px; /* Add some margin below the title */
+    font-size: 20px; 
+    margin-bottom: 10px; 
   }
   
   .card-price {
     display: flex;
     justify-content: center;
-    font-size: 25px; /* Adjust font size for the price */
-    color: #007bff; /* Choose a color for the price text */
-    margin-bottom: 15px; /* Add margin below the price */
+    font-size: 25px; 
+    color: #007bff; 
+    margin-bottom: 15px; 
   }
   
   .card-link {
     display: flex;
     justify-content: center;
-    color: #007bff; /* Match the link color with the price */
+    color: #007bff; 
     text-decoration: none;
-    transition: color 0.3s; /* Add smooth transition effect */
+    transition: color 0.3s; 
   }
   
   .card-link:hover {
-    color: #0056b3; /* Change link color on hover */
+    color: #0056b3; 
   }
   .painting-container {
     position: relative;
@@ -64,7 +64,7 @@
     background-image: url('https://i.imgur.com/fndp3Pl.jpeg');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.7); /* Adjust brightness as needed */
+    filter: brightness(0.7); 
     z-index: -1;
   }
   

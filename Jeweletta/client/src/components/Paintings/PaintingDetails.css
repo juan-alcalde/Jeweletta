@@ -2,8 +2,8 @@
   .detail-price {
     display: flex;
     justify-content: start;
-    font-size: 50px; /* Adjust font size for the price */
-    color: #8adba1; /* Choose a color for the price text */
+    font-size: 50px; 
+    color: #8adba1; 
   }
   p{ font-size: 20px;}
 
