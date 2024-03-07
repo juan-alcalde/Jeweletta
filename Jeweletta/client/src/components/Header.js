@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { NavLink as RRNavLink } from "react-router-dom";
 import { logout } from '../Managers/UserProfileManager';
 import {
@@ -11,13 +12,24 @@ import {
   NavLink
 } from 'reactstrap';
 import "./Header.css";
+import { getUserOrders } from '../Managers/OrderManager';
 
 export default function Header({isLoggedIn, setIsLoggedIn}) {
   const [isOpen, setIsOpen] = useState(false);
+  const [userOrders, setUserOrders] = useState([]);
   const toggle = () => setIsOpen(!isOpen);
   const localTabloidUser = localStorage.getItem("userProfile");
   const JewelUserObject = JSON.parse(localTabloidUser);
  
+  useEffect(() => {
+    const localTabloidUser = localStorage.getItem('userProfile');
+    const JewelUserObject = JSON.parse(localTabloidUser);
+
+    // Fetch user orders and update state
+    getUserOrders(JewelUserObject.id)
+      .then(data => setUserOrders(data))
+      .catch(error => console.error('Error fetching user orders:', error));
+  }, []);
 
   return (
     <div className="sticky-navbar">
@@ -61,7 +73,7 @@ export default function Header({isLoggedIn, setIsLoggedIn}) {
             <NavLink tag={RRNavLink} to="/paintings" style={{ fontSize: "20px", color: "white" }}>Gallery</NavLink> {/* Adjust the font size */}
           </NavItem>
           <NavItem>
-             <NavLink tag={RRNavLink} to="/my-orders" style={{ fontSize: "20px", color: "white" }}>MyCart</NavLink>
+             <NavLink tag={RRNavLink} to="/my-orders" style={{ fontSize: "20px", color: "white" }}>MyCart{userOrders.length > 0 && `(${userOrders.length})`}</NavLink>
               </NavItem>
           </>
         }

@@ -7,6 +7,7 @@ import { CustomerOrder } from "./CustomerOrder";
 
 export const UserOrders = () => {
     const [userOrders, setUserOrders] = useState([]);
+    const [subtotal, setSubtotal] = useState(0);
 
     // This gets the current user
     const localTabloidUser = localStorage.getItem("userProfile");
@@ -14,17 +15,24 @@ export const UserOrders = () => {
 
 
     useEffect(() => {
-        getUserOrders(JewelUserObject.id)
-        .then((data) => {
-            setUserOrders(data)
-        })
-        .catch((error) => {
-            console.log("Can't fetch user posts:" , error)
-        });
-    }, [JewelUserObject.id] );
+      // Fetch user orders and update state
+      getUserOrders(JewelUserObject.id)
+          .then((data) => {
+              setUserOrders(data);
+              // Calculate subtotal
+              let total = 0;
+              data.forEach((order) => {
+                  total += order.totalAmount;
+              });
+              setSubtotal(total);
+          })
+          .catch((error) => {
+              console.log("Can't fetch user orders:", error);
+          });
+  }, [JewelUserObject.id]);
 
     return (<>
-     <div className="bg-secondary text-light py-4">
+     <div className="bg-dark ">
   <div className="container ">
     <div className="row">
       <div className="col-md-7" >
@@ -37,7 +45,7 @@ export const UserOrders = () => {
               {userOrders.map((order) => { return <CustomerOrder key={order.id} order={order} />; })}   
                <CardFooter>
                 <p>
-                  Subtotal ( items): $ .
+                Subtotal ({userOrders.length} items): ${subtotal.toFixed(2)}
                 </p>
                </CardFooter>
             </Card>
@@ -51,7 +59,9 @@ export const UserOrders = () => {
                      <h1> My Subtotal </h1>
                   </CardHeader>
                       <CardBody>
-                        <p><strong>Subtotal ( _ items): </strong></p>
+                      <p>
+                                            <strong>Subtotal ({userOrders.length} items): </strong>${subtotal.toFixed(2)}
+                                        </p>
                       </CardBody>
                       <CardFooter>
                       <button className="btn btn-primary btn-checkout">Proceed to checkout</button>
