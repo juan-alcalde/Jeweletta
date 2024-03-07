@@ -32,7 +32,7 @@ export const UserOrders = () => {
   }, [JewelUserObject.id]);
 
     return (<>
-     <div className="bg-secondary text-light py-4">
+     <div className="bg-dark ">
   <div className="container ">
     <div className="row">
       <div className="col-md-7" >
