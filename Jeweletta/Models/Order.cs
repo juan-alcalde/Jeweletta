@@ -16,6 +16,8 @@ namespace Jeweletta.Models
 
         [Required]
         public decimal? TotalAmount { get; set; }
+        public int PaintingId { get; set; }
+        public Painting? Painting { get; set; }
 
     }
 }

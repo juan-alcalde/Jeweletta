@@ -11,7 +11,7 @@ export const Order = ({ order}) => {
     <td>{order.id}</td>
     <td>{order.userProfile.userName}</td>
     <td>{order?.orderDate}</td>
-    <td>{order?.totalAmount}</td>
+    <td>{order?.painting.title}</td>
     
     
    

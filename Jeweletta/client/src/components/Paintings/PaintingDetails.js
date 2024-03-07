@@ -48,7 +48,7 @@ export const PaintingDetails = () => {
           <br></br>
           <p className="detail-price">${painting.price}.00 USD</p>
           <button className="btn btn-primary">Add to Cart</button>
-          <button className="btn btn-secondary ml-2">Buy Now</button>
+         
          <hr></hr>
          <h4>Product Description:</h4>
           <p>{painting.description}</p>
