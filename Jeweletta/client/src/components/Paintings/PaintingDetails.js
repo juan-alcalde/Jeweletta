@@ -6,19 +6,54 @@ import { getPaintingById } from "../../Managers/PaintingManager";
 import "./PaintingDetails.css"
 import { useNavigate } from "react-router-dom";
 
+import { addOrder } from "../../Managers/OrderManager";
+
 export const PaintingDetails = () => {
-    const [painting, setPainting] = useState();
-    const { id } = useParams();
-    const navigate = useNavigate();
-    
-    
-    useEffect(() => {
-        getPaintingById(id).then(setPainting);
-      }, []);
-    
-      if (!painting) {
-        return null;
-      }
+  const [painting, setPainting] = useState(null);
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const localTabloidUser = localStorage.getItem("userProfile");
+  const tabloidUserObject = JSON.parse(localTabloidUser);
+
+  useEffect(() => {
+    getPaintingById(id)
+      .then((paintingData) => {
+        setPainting(paintingData);
+      })
+      .catch((error) => {
+        console.error("Error fetching painting details:", error);
+      });
+  }, [id]);
+
+  const handleAddOrder = () => {
+    if (!painting) {
+      console.error("Painting details not available");
+      return;
+    }
+
+    const order = {
+      orderDate: new Date(),
+      userProfileId: tabloidUserObject.id,
+      TotalAmount: painting.price,
+      paintingId: id,
+    };
+
+    addOrder(order)
+      .then(() => {
+        window.location.reload();
+
+        console.log("Order added successfully");
+        // Optionally, navigate to the shopping cart page or update UI
+      })
+      .catch((error) => {
+        console.error("Error adding order:", error);
+      });
+  };
+
+  if (!painting) {
+    return null; // Or render a loading indicator
+  }
       return (<>
       <div className="bg-black text-light py-4">
       <button
@@ -47,7 +82,10 @@ export const PaintingDetails = () => {
           <hr></hr>
           <br></br>
           <p className="detail-price">${painting.price}.00 USD</p>
-          <button className="btn btn-primary">Add to Cart</button>
+
+          <Button color='primary' onClick={(e) => handleAddOrder(e)}>
+					Add To MyCart
+				</Button>
          
          <hr></hr>
          <h4>Product Description:</h4>
