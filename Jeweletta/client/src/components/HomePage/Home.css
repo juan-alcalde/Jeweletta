@@ -14,6 +14,6 @@
     background-image: url('../Images/IMG_4284_Facetune_20-04-2022-17-14-52.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.7); /* Adjust brightness as needed */
+    filter: brightness(0.7); 
     z-index: -1;
   }

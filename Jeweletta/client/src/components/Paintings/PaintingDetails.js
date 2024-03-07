@@ -44,7 +44,7 @@ export const PaintingDetails = () => {
         window.location.reload();
 
         console.log("Order added successfully");
-        // Optionally, navigate to the shopping cart page or update UI
+        
       })
       .catch((error) => {
         console.error("Error adding order:", error);
@@ -52,7 +52,7 @@ export const PaintingDetails = () => {
   };
 
   if (!painting) {
-    return null; // Or render a loading indicator
+    return null; 
   }
       return (<>
       <div className="bg-black text-light py-4">

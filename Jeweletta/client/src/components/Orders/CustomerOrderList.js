@@ -15,11 +15,9 @@ export const UserOrders = () => {
 
 
     useEffect(() => {
-      // Fetch user orders and update state
       getUserOrders(JewelUserObject.id)
           .then((data) => {
               setUserOrders(data);
-              // Calculate subtotal
               let total = 0;
               data.forEach((order) => {
                   total += order.totalAmount;
