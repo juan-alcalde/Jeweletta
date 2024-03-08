@@ -1,18 +1,25 @@
 import { useEffect, useState } from "react";
 import { Card, CardBody, CardImg, CardHeader, CardText, CardTitle, Col, Container, Row, Table, CardFooter } from "reactstrap";
-import { getUserOrders } from "../../Managers/OrderManager";
+import { DeleteOrder, getUserOrders } from "../../Managers/OrderManager";
 import { Order } from "./Order";
 import { CustomerOrder } from "./CustomerOrder";
-
+import { useNavigate } from "react-router-dom";
 
 export const UserOrders = () => {
     const [userOrders, setUserOrders] = useState([]);
     const [subtotal, setSubtotal] = useState(0);
-
+const navigate = useNavigate();
     // This gets the current user
     const localTabloidUser = localStorage.getItem("userProfile");
     const JewelUserObject = JSON.parse(localTabloidUser);
-
+    
+    const deleteOrderById = () => {
+      const confirmDelete = window.confirm("To confirm purchase, click 'OK'");
+      if (confirmDelete) {
+        DeleteOrder().then(() => { navigate("/confirm"); window.location.reload()})
+      }
+      
+    }
 
     useEffect(() => {
       getUserOrders(JewelUserObject.id)
@@ -30,7 +37,15 @@ export const UserOrders = () => {
   }, [JewelUserObject.id]);
 
     return (<>
+    
      <div className="bg-black  ">
+     <button
+            onClick={() => navigate("/paintings")}
+           
+            
+            className="outlined-btn">
+                Go Back
+            </button>
   <div className="container ">
     <div className="row">
       <div className="col-md-7" >
@@ -62,7 +77,7 @@ export const UserOrders = () => {
                                         </p>
                       </CardBody>
                       <CardFooter>
-                      <button className="btn btn-primary btn-checkout">Proceed to checkout</button>
+                      <button className="btn btn-primary btn-checkout" onClick={() => deleteOrderById()} >Proceed to checkout</button>
                       </CardFooter>
                 </Card> 
             </div>

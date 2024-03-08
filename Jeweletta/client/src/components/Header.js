@@ -26,7 +26,7 @@ export default function Header({isLoggedIn, setIsLoggedIn}) {
     const JewelUserObject = JSON.parse(localTabloidUser);
 
     // Fetch user orders and update state
-    getUserOrders(JewelUserObject.id)
+    getUserOrders(JewelUserObject?.id)
       .then(data => setUserOrders(data))
       .catch(error => console.error('Error fetching user orders:', error));
   }, []);

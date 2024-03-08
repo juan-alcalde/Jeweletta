@@ -112,6 +112,19 @@ LEFT JOIN Painting p ON o.paintingId = p.id
                 }
             }
         }
+        public void DeleteCart()
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM [Order] ";
+                    
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
         public List<Order> GetOrderByUserId(int userProfileId)
         {
