@@ -42,6 +42,7 @@ export const PaintingDetails = () => {
     addOrder(order)
       .then(() => {
         window.location.reload();
+        alert(`Your painitng was successfully added to MyCart. `);
 
         console.log("Order added successfully");
         
@@ -76,9 +77,7 @@ export const PaintingDetails = () => {
             <br></br> <br></br>
             <br></br>
         <div className="col-md-6">
-          <h2>{painting.title} : Fantasy Wall art,
-           Room Decor for Home Office,
-            Bedroom Living Room, Wall Decor  (Original Painting)</h2>
+          <h2>{painting.title}  (Original Painting)</h2>
           <hr></hr>
           <br></br>
           <p className="detail-price">${painting.price}.00 USD</p>

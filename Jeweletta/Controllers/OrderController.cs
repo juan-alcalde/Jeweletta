@@ -50,6 +50,13 @@ namespace Jeweletta.Controllers
             _orderRepository.Delete(id);
             return NoContent();
         }
+
+        [HttpDelete]
+        public IActionResult DeleteCart()
+        {
+            _orderRepository.DeleteCart();
+            return NoContent();
+        }
         /*[HttpGet("{UserProfileId}")]
               public IActionResult Get(int UserProfileId)
               {

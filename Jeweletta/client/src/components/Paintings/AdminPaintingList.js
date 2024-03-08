@@ -19,6 +19,10 @@ export const AdminPaintingList = () => {
     <>
     <div className="merchandise-management-page">
     <header className="page-header">
+      <br>
+      </br>
+      <br></br>
+      <br></br>
         <h1> Gallary Management</h1>
         <p>Welcome to the management page. Here, you can manage your list items.</p>
       </header>

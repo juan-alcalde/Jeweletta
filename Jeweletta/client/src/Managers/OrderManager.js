@@ -15,7 +15,13 @@ export const getAllOrders  = () => {
         "Content-Type": "application/json",
       },}) 
   };
-
+  export const  DeleteOrder = () => {
+    return fetch(`${baseUrl}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },}) 
+  };
   export const addOrder = (order) => {
     return fetch(baseUrl, {
       method: "POST",

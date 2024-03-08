@@ -11,7 +11,7 @@ export const CustomerOrder = ({ order}) => {
     getAllOrders().then((allOrders) => setOrders(allOrders));
   };
   const deleteOrderById = (id) => {
-    const confirmDelete = window.confirm("Do you really want to delete this category? This is your last chance to back out.");
+    const confirmDelete = window.confirm("Do you really want to delete this shoppingz? This is your last chance to back out.");
     if (confirmDelete) {
       DeleteOrderById(id).then(() => {getOrders();window.location.reload();})
     }

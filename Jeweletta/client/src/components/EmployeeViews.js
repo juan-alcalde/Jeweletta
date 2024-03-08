@@ -7,6 +7,7 @@ import { PaintingForm } from "./Paintings/PaintingFormAdmin";
 import { AdminPaintingList } from "./Paintings/AdminPaintingList";
 import { PaintingEdit } from "./Paintings/PaintingEdit";
 import OrderList from "./Orders/OrderList";
+import AdminHome from "./HomePage/AdminHome";
 
 
 
@@ -16,7 +17,7 @@ export default function EmployeeViews() {
   return (
       <Routes>
         
-        <Route path="/" element={<></>} />
+        <Route path="/" element={<AdminHome/>} />
         <Route path="/paintings/admin" element= {<AdminPaintingList/>} />
         <Route path="/categories" element={<CategoryList/>} />
         <Route path="/painting/add" element={<PaintingForm />} />
