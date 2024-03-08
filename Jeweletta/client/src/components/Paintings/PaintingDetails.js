@@ -42,7 +42,7 @@ export const PaintingDetails = () => {
     addOrder(order)
       .then(() => {
         window.location.reload();
-        alert(`Your painitng was successfully added to MyCart. `);
+        alert(`Your Painiting Was Successfully Added to MyCart. Click 'OK' to Continue `);
 
         console.log("Order added successfully");
         
