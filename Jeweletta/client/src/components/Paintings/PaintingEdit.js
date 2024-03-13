@@ -30,7 +30,7 @@ export const PaintingEdit = () => {
 
 	const handleSubmit = (e) => {
 		
-		return editPainting(painting).then(() => navigate("/"));
+		return editPainting(painting).then(() => navigate("/paintings/admin"));
 	};
 	return (
 		<div>

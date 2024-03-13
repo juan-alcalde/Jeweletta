@@ -5,7 +5,7 @@ import { Badge } from "reactstrap";
 const AdminHome = () => {
   return (
     <div className="admin-home">
-      <h1>Welcome, Owner!</h1>
+      <h1>Welcome, Jewel!</h1>
      
     </div>
   );
