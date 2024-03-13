@@ -23,7 +23,7 @@ export const AdminPaintingList = () => {
       </br>
       <br></br>
       <br></br>
-        <h1> Gallary Management</h1>
+        <h1> Gallery Management</h1>
         <p>Welcome to the management page. Here, you can manage your list items.</p>
       </header>
       <CreateButton/>
