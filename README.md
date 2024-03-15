@@ -1,6 +1,6 @@
 ![MasterHead](https://static.myfigurecollection.net/upload/pictures/2023/09/07/3745732.gif)
 # Jeweletta
-Jeweletta is a web applicationfor selling original art pieces. My client Jeweletta, an artist looking for a way to get her artwork out to the world. This app provides a platform for Jeweletta to showcase her work and for users to browse and purchase art pieces online.
+Jeweletta is a web application for selling original art pieces. My client Jeweletta, an artist looking for a way to get her artwork out to the world. This app provides a platform for Jeweletta to showcase her work and for users to browse and purchase art pieces online.
  leveraging ASP.NET Core for backend development and React.js for the frontend, delivering a seamless user interface. With Microsoft SQL Server as its database management system, it ensures efficient data storage and retrieval, enabling scalability and performance optimization. This full-stack solution epitomizes modern web development practices, emphasizing robustness, responsiveness, and usability.
  
 ## Table of Contents
