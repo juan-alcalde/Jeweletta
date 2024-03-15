@@ -1,8 +1,8 @@
 ![MasterHead](https://static.myfigurecollection.net/upload/pictures/2023/09/07/3745732.gif)
 # Jeweletta
-
-Jeweletta is a web application built with React.js for selling original art pieces.  This is for my client Jeweletta, an artist looking for a way to get her artwork out to the world. This app provides a platform for Jeweletta to showcase her work and for users to browse and purchase art pieces online.
-
+Jeweletta is a web applicationfor selling original art pieces. My client Jeweletta, an artist looking for a way to get her artwork out to the world. This app provides a platform for Jeweletta to showcase her work and for users to browse and purchase art pieces online.
+ leveraging ASP.NET Core for backend development and React.js for the frontend, delivering a seamless user interface. With Microsoft SQL Server as its database management system, it ensures efficient data storage and retrieval, enabling scalability and performance optimization. This full-stack solution epitomizes modern web development practices, emphasizing robustness, responsiveness, and usability.
+ 
 ## Table of Contents
 
 - [Jeweletta](#jeweletta)
@@ -22,7 +22,7 @@ Jeweletta is designed to provide a seamless experience for both Jewel and art en
 ## Features
 
 - User authentication and authorization
-- Artwork browsing and search functionality
+- Artwork browsing 
 - Shopping cart management
 - Secure payment processing
 - site management
@@ -42,10 +42,81 @@ Jeweletta is designed to provide a seamless experience for both Jewel and art en
 
 1. Clone the repository.
 2. Navigate to the `Jeweletta` folder.
-3. Install dependencies for the backend and frontend.
-4. Set up the database using the provided SQL scripts.
-5. Configure the connection string in the backend appsettings.json file.
-6. Run the backend and frontend servers.
+3. # Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Continue
+4. Install dependencies for the backend and frontend.
+5. Set up the database using the provided SQL scripts.
+6. Configure the connection string in the backend appsettings.json file.
+7. Run the backend and frontend servers.
 
 ## Usage
 
