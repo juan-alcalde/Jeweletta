@@ -42,7 +42,7 @@ Jeweletta is designed to provide a seamless experience for both Jewel and art en
 
 1. Clone the repository.
 2. Navigate to the `Jeweletta` folder.
-3. # Getting Started with Create React App
+3. Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
