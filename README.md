@@ -8,6 +8,7 @@ Jeweletta is a web application for selling original art pieces. My client Jewele
 - [Jeweletta](#jeweletta)
   - [Table of Contents](#table-of-contents)
   - [About](#about)
+  - [ERD](#erd)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Setup and Installation](#setup-and-installation)
@@ -18,6 +19,10 @@ Jeweletta is a web application for selling original art pieces. My client Jewele
 ## About
 
 Jeweletta is designed to provide a seamless experience for both Jewel and art enthusiasts. She can upload her artwork, and manage her inventory. Users can explore a diverse range of Jeweletta's artwork, add items to their shopping cart, and complete purchases securely.
+### ERD
+
+![ERD](https://github.com/juan-alcalde/Jeweletta/assets/143422887/bd6b4a31-e8e1-453f-82eb-e19dea580ec8)
+
 
 ## Features
 
